@@ -1,6 +1,6 @@
 # Vue Interactive CLI
 
-An interactive CLI for Vue, inspired by Rhino3d's command prompt UX. To configure,
+An interactive CLI component for Vue, inspired by Rhino3d's command prompt UX. To configure,
 supply a list of commands to recognize, with options. Once a command is submitted, 
 the component will emit out a result object with properties corresponding to the 
 command options you configured. Any required command options are auto-prompted.
