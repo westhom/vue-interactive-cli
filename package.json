@@ -1,0 +1,29 @@
+{
+  "name": "vue-interactive-cli",
+  "version": "1.0.0",
+  "description": "An interactive CLI for Vue, partially inspired by Rhino3d's command line UX.",
+  "keywords": [
+    "vue",
+    "cli",
+    "interactive",
+    "prompt",
+    "command"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/westhom/vue-interactive-cli.git"
+  },
+  "peerDependencies": {
+    "vue": "2.x"
+  },
+  "author": "Wes Thom <westhom@icloud.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/westhom/vue-interactive-cli/issues"
+  },
+  "homepage": "https://github.com/westhom/vue-interactive-cli#readme"
+}
