@@ -1,6 +1,6 @@
 {
   "name": "vue-interactive-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An interactive CLI component for Vue, partially inspired by Rhino3d's command line UX.",
   "keywords": [
     "vue",
