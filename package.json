@@ -4,6 +4,7 @@
   "description": "An interactive CLI component for Vue, partially inspired by Rhino3d's command line UX.",
   "keywords": [
     "vue",
+    "vue3",
     "cli",
     "interactive",
     "prompt",
