@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import Vue from 'vue';
+import {nextTick} from 'vue';
 
 export default {
   data () {
@@ -141,8 +141,11 @@ export default {
     }
   },
   watch: {
-    log_arr () {
-      this.log = this.log_arr.join('\n');
+    log_arr: {
+      handler(){
+        this.log = this.log_arr.join('\n');
+      },
+      deep: true
     },
     promptWrite () {
       this.cli_input = this.promptWrite;
@@ -166,7 +169,7 @@ export default {
     async nextHistoryItem () {
       this.cli_input = this.history[this.history_cursor];
 
-      await Vue.nextTick();
+      await nextTick();
       this.$refs.cli.setSelectionRange(this.cli_input.length, this.cli_input.length);
 
       this.history_cursor++;
@@ -178,7 +181,7 @@ export default {
     async prevHistoryItem () {
       this.cli_input = this.history[this.history_cursor];
 
-      await Vue.nextTick();
+      await nextTick();
       this.$refs.cli.setSelectionRange(this.cli_input.length, this.cli_input.length);
 
       this.history_cursor--;
@@ -190,7 +193,7 @@ export default {
     async print (msg) {
       this.log_arr.push(msg);
 
-      await Vue.nextTick();
+      await nextTick();
 
       this.$refs.logarea.scrollTop = this.$refs.logarea.scrollHeight;
     },
@@ -276,7 +279,7 @@ export default {
       // build default object
       this.active_command.options.forEach(opt => {
         const def = opt.default === undefined ? null : opt.default;
-        this.$set(this.command_result, opt.name, def);
+        this.command_result[opt.name] = def;
       });
 
       this.promptNextOption();
@@ -442,17 +445,7 @@ export default {
       const cmds = this.commands.map(cmd => cmd.command).join(', ');
       this.print('available commands: ' + cmds);
     }
-  },
-  created () {
-
-  },
-  mounted () {
-    // this.printHelp();
-  },
-  beforeDestroy () {
-
-  },
-  components: {}
+  }
 };
 </script>
 

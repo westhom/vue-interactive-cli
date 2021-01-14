@@ -1,6 +1,6 @@
 # Vue Interactive CLI
 
-An interactive CLI component for Vue, inspired by Rhino3d's command prompt UX. To configure,
+An interactive CLI component for **Vue 3**, inspired by Rhino3d's command prompt UX. To configure,
 supply a list of commands to recognize, with options. Once a command is submitted, 
 the component will emit out a result object with properties corresponding to the 
 command options you configured. Any required command options are auto-prompted.
@@ -21,6 +21,7 @@ npm i --save vue-interactive-cli
 ```
 
 ```js
+import 'vue-interactive-cli/dist/InteractiveCLI.css';
 import CLI from 'vue-interactive-cli';
 ```
 
@@ -119,5 +120,3 @@ the `cmd-complete` and contain the following property names:
 ## Todo
 
 - custom option input verify functions
-- style config
-- proper repo setup for a .vue npm package
